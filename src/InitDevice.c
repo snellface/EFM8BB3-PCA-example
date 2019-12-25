@@ -190,6 +190,7 @@ extern void PCA_0_enter_DefaultMode_from_RESET(void) {
 	// [PCA0PWM - PCA PWM Configuration]$
 
 	// $[PCA On]
+	PCA0CN0_CR = PCA0CN0_CR__RUN;
 	// [PCA On]$
 
 }
@@ -218,17 +219,10 @@ extern void PCACH_0_enter_DefaultMode_from_RESET(void) {
 	// [PCA0CPM0 - PCA Channel 0 Capture/Compare Mode]$
 
 	// $[PCA0CPL0 - PCA Channel 0 Capture Module Low Byte]
-	/***********************************************************************
-	 - PCA Channel 0 Capture Module Low Byte = 0x0A
-	 ***********************************************************************/
-	PCA0CPL0 = (0x0A << PCA0CPL0_PCA0CPL0__SHIFT);
 	// [PCA0CPL0 - PCA Channel 0 Capture Module Low Byte]$
 
 	// $[PCA0CPH0 - PCA Channel 0 Capture Module High Byte]
-	/***********************************************************************
-	 - PCA Channel 0 Capture Module High Byte = 0x0A
-	 ***********************************************************************/
-	PCA0CPH0 = (0x0A << PCA0CPH0_PCA0CPH0__SHIFT);
+	PCA0CPH0 = 0x00;
 	// [PCA0CPH0 - PCA Channel 0 Capture Module High Byte]$
 
 	// $[Auto-reload]
