@@ -16,9 +16,9 @@ SI_SBIT(PB0, SFR_P0, 2);
 SI_SBIT(PB1, SFR_P0, 3);
 
 // The "OUT_" here is only because its easier for me to see the difference between inputs and outputs, it's not necessary.
-SI_SBIT(OUT_LED_G, SFR_P1, 6);
-SI_SBIT(OUT_LED_B, SFR_P1, 7);
-SI_SBIT(OUT_LED_R, SFR_P2, 0);
+SI_SBIT(OUT_LED_G, SFR_P1, 4);
+SI_SBIT(OUT_LED_B, SFR_P1, 5);
+SI_SBIT(OUT_LED_R, SFR_P1, 6);
 
 volatile uint8_t ledIntensity = 0; // variables accessed from inside interrupts must be volatile, otherwise the compiler MIGHT do optimize them away, your code will work in debug builds but not otherwise.
 

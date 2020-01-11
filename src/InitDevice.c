@@ -119,15 +119,14 @@ extern void PORTS_1_enter_DefaultMode_from_RESET(void) {
 	 - P1.1 pin is skipped by the crossbar
 	 - P1.2 pin is skipped by the crossbar
 	 - P1.3 pin is skipped by the crossbar
-	 - P1.4 pin is not skipped by the crossbar
-	 - P1.5 pin is not skipped by the crossbar
+	 - P1.4 pin is skipped by the crossbar
+	 - P1.5 pin is skipped by the crossbar
 	 - P1.6 pin is not skipped by the crossbar
 	 - P1.7 pin is not skipped by the crossbar
 	 ***********************************************************************/
 	P1SKIP = P1SKIP_B0__SKIPPED | P1SKIP_B1__SKIPPED | P1SKIP_B2__SKIPPED
-			| P1SKIP_B3__SKIPPED | P1SKIP_B4__NOT_SKIPPED
-			| P1SKIP_B5__NOT_SKIPPED | P1SKIP_B6__NOT_SKIPPED
-			| P1SKIP_B7__NOT_SKIPPED;
+			| P1SKIP_B3__SKIPPED | P1SKIP_B4__SKIPPED | P1SKIP_B5__SKIPPED
+			| P1SKIP_B6__NOT_SKIPPED | P1SKIP_B7__NOT_SKIPPED;
 	// [P1SKIP - Port 1 Skip]$
 
 	// $[P1MASK - Port 1 Mask]
@@ -159,6 +158,15 @@ extern void PBCFG_0_enter_DefaultMode_from_RESET(void) {
 	// [XBR0 - Port I/O Crossbar 0]$
 
 	// $[XBR1 - Port I/O Crossbar 1]
+	/***********************************************************************
+	 - CEX0 routed to Port pin
+	 - ECI unavailable at Port pin
+	 - T0 unavailable at Port pin
+	 - T1 unavailable at Port pin
+	 - T2 unavailable at Port pin
+	 ***********************************************************************/
+	XBR1 = XBR1_PCA0ME__CEX0 | XBR1_ECIE__DISABLED | XBR1_T0E__DISABLED
+			| XBR1_T1E__DISABLED | XBR1_T2E__DISABLED;
 	// [XBR1 - Port I/O Crossbar 1]$
 
 }
